@@ -14,7 +14,7 @@
 		38DB53661FE180F500DB6DC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DB53641FE180F500DB6DC5 /* LaunchScreen.storyboard */; };
 		38DB53711FE180F500DB6DC5 /* SportsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DB53701FE180F500DB6DC5 /* SportsStoreTests.swift */; };
 		38DB537C1FE180F600DB6DC5 /* SportsStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DB537B1FE180F600DB6DC5 /* SportsStoreUITests.swift */; };
-		38DB538A1FE18D2B00DB6DC5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DB53891FE18D2B00DB6DC5 /* TableViewCell.swift */; };
+		38DB538A1FE18D2B00DB6DC5 /* ProductTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DB53891FE18D2B00DB6DC5 /* ProductTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		38DB53771FE180F600DB6DC5 /* SportsStoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsStoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DB537B1FE180F600DB6DC5 /* SportsStoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsStoreUITests.swift; sourceTree = "<group>"; };
 		38DB537D1FE180F600DB6DC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		38DB53891FE18D2B00DB6DC5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		38DB53891FE18D2B00DB6DC5 /* ProductTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,7 @@
 			children = (
 				38DB535B1FE180F500DB6DC5 /* AppDelegate.swift */,
 				38DB535D1FE180F500DB6DC5 /* ViewController.swift */,
-				38DB53891FE18D2B00DB6DC5 /* TableViewCell.swift */,
+				38DB53891FE18D2B00DB6DC5 /* ProductTableCell.swift */,
 				38DB535F1FE180F500DB6DC5 /* Main.storyboard */,
 				38DB53621FE180F500DB6DC5 /* Assets.xcassets */,
 				38DB53641FE180F500DB6DC5 /* LaunchScreen.storyboard */,
@@ -262,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38DB538A1FE18D2B00DB6DC5 /* TableViewCell.swift in Sources */,
+				38DB538A1FE18D2B00DB6DC5 /* ProductTableCell.swift in Sources */,
 				38DB535E1FE180F500DB6DC5 /* ViewController.swift in Sources */,
 				38DB535C1FE180F500DB6DC5 /* AppDelegate.swift in Sources */,
 			);

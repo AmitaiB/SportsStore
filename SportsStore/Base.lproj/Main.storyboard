@@ -57,6 +57,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="stockLevelDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="Mrb-Xm-Wl2"/>
+                                                    </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lr8-e5-xwl">
                                                     <rect key="frame" x="15" y="51" width="738" height="21"/>
@@ -66,6 +69,9 @@
                                                 </label>
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Ohi-xJ-PMj">
                                                     <rect key="frame" x="569" y="6" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="stockLevelDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ci1-R0-lx5"/>
+                                                    </connections>
                                                 </stepper>
                                             </subviews>
                                             <constraints>
@@ -86,7 +92,7 @@
                                             <outlet property="descriptionLabel" destination="lr8-e5-xwl" id="5RB-8q-a6V"/>
                                             <outlet property="nameLabel" destination="wEm-LW-lki" id="ozK-NU-akb"/>
                                             <outlet property="stockField" destination="4f5-Ii-NNw" id="elx-0A-26E"/>
-                                            <outlet property="stockStepper" destination="Ohi-xJ-PMj" id="G2Z-LZ-bdV"/>
+                                            <outlet property="stockStepper" destination="Ohi-xJ-PMj" id="wCQ-2g-vlQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

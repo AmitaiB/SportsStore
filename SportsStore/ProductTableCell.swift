@@ -13,4 +13,6 @@ class ProductTableCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var stockStepper: UIStepper!
     @IBOutlet weak var stockField: UITextField!
+    
+    var productId: Int?
 }

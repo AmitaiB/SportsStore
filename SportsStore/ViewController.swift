@@ -47,10 +47,15 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     // p.39
     func displayTotalStock() {
-        let stockTotal = products.reduce(0) { (total, product) in
-            return total + product.stockLevel
+        let finalTotals: (Int, Double) = products.reduce((0, 0.0)) { (totals, product) in
+            return (
+                totals.0 + product.stockLevel,
+                totals.1 + product.stockValue
+            )
         }
-        totalStockLabel.text = "\(stockTotal) Products in Stock"
+        
+        totalStockLabel.text = "\(finalTotals) Products in Stock. "
+            + "Total Value: \(Utils.currencyString(from: finalTotals.1))"
     }
     
     

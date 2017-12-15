@@ -22,4 +22,12 @@ class Product {
         price = aPrice
         stock = aStockVal
     }
+    
+    func calculateTax(rate: Double) -> Double {
+        return min(10, price * rate)
+    }
+    
+    var stockValue: Double {
+        return price * Double(stock)
+    }
 }

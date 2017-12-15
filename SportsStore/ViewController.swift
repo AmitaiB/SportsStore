@@ -29,6 +29,12 @@ class ViewController: UIViewController, UITableViewDataSource {
         Product(name: "Bling-Bling King", description: "Gold-plated, diamond studded King", category: "Chess", price: 1200.0, stock: 4)
     ]
     
+    func calculateStockValue(productsArray: [Product]) -> Double {
+        return productsArray.reduce(0) { (total, product) in
+            return total + product.stockValue
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         displayTotalStock()

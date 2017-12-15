@@ -9,25 +9,37 @@
 import Foundation
 
 class Product {
-    var name: String
-    var description: String
-    var category: String
-    var price: Double
-    var stock: Int
+    private(set) var name: String
+    private(set) var description: String
+    private(set) var category: String
+    private var stockBackingValue = 0
+    private var priceBackingValue = 0.0
     
-    init(name aName: String, description aDescription: String, category aCategory: String, price aPrice: Double, stock aStockVal: Int) {
+    var stockLevel: Int {
+        get { return stockBackingValue }
+        set { stockBackingValue = max(0, newValue) }
+    }
+    
+    private(set) var price: Double {
+        get { return priceBackingValue }
+        set { priceBackingValue = max(1, newValue) }
+    }
+    
+    var stockValue: Double {
+        return price * Double(stockLevel)
+    }
+    
+    
+    init(name aName: String, description aDescription: String, category aCategory: String, price aPrice: Double, stockLevel aStockVal: Int) {
         name = aName
         description = aDescription
         category = aCategory
         price = aPrice
-        stock = aStockVal
+        stockLevel = aStockVal
     }
+    
     
     func calculateTax(rate: Double) -> Double {
         return min(10, price * rate)
-    }
-    
-    var stockValue: Double {
-        return price * Double(stock)
     }
 }

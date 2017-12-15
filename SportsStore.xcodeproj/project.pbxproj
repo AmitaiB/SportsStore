@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3837B4971FE376F600FCFF92 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B4961FE376F600FCFF92 /* Product.swift */; };
+		38CD404D1FE37CB8000897DE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CD404C1FE37CB8000897DE /* Utils.swift */; };
 		38DB535C1FE180F500DB6DC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DB535B1FE180F500DB6DC5 /* AppDelegate.swift */; };
 		38DB535E1FE180F500DB6DC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DB535D1FE180F500DB6DC5 /* ViewController.swift */; };
 		38DB53611FE180F500DB6DC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DB535F1FE180F500DB6DC5 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		3837B4961FE376F600FCFF92 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		38CD404C1FE37CB8000897DE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		38DB53581FE180F500DB6DC5 /* SportsStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DB535B1FE180F500DB6DC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38DB535D1FE180F500DB6DC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				38DB535D1FE180F500DB6DC5 /* ViewController.swift */,
 				38DB53891FE18D2B00DB6DC5 /* ProductTableCell.swift */,
 				3837B4961FE376F600FCFF92 /* Product.swift */,
+				38CD404C1FE37CB8000897DE /* Utils.swift */,
 				38DB535F1FE180F500DB6DC5 /* Main.storyboard */,
 				38DB53621FE180F500DB6DC5 /* Assets.xcassets */,
 				38DB53641FE180F500DB6DC5 /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38CD404D1FE37CB8000897DE /* Utils.swift in Sources */,
 				38DB538A1FE18D2B00DB6DC5 /* ProductTableCell.swift in Sources */,
 				3837B4971FE376F600FCFF92 /* Product.swift in Sources */,
 				38DB535E1FE180F500DB6DC5 /* ViewController.swift in Sources */,

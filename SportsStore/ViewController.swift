@@ -16,16 +16,17 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     // p.29
+    
     var products = [
-        ("Kayak", "A boat for one person", "Watersports", 275.0, 10),
-        ("Lifejacket", "Protective and fashionable", "Watersports", 48.95, 14),
-        ("Soccer Ball", "FIFA-approved size and weight", "Soccer", 19.5, 32),
-        ("Corner Flags", "Give your playing field a professional touch", "Soccer", 34.95, 1),
-        ("Stadium", "Flat-packed 35,000-seat stadium", "Soccer", 79500.0, 4),
-        ("Thinking Cap", "Improve your brain effciency by 75%", "Chess", 16.0, 8),
-        ("Unsteady Chair", "Secretly give your opponent a disadvantage", "Chess", 29.95, 3),
-        ("Human Chess Board", "A fun game for the family", "Chess", 75.0, 2),
-        ("Bling-Bling King", "Gold-plated, diamond studded King", "Chess", 1200.0, 4)
+        Product(name: "Kayak", description: "A boat for one person", category: "Watersports", price: 275.0, stock: 10),
+        Product(name: "Lifejacket", description: "Protective and fashionable", category: "Watersports", price: 48.95, stock: 14),
+        Product(name: "Soccer Ball", description: "FIFA-approved size and weight", category: "Soccer", price: 19.5, stock: 32),
+        Product(name: "Corner Flags", description: "Give your playing field a professional touch", category: "Soccer", price: 34.95, stock: 1),
+        Product(name: "Stadium", description: "Flat-packed 35,000-seat stadium", category: "Soccer", price: 79500.0, stock: 4),
+        Product(name: "Thinking Cap", description: "Improve your brain effciency by 75%", category: "Chess", price: 16.0, stock: 8),
+        Product(name: "Unsteady Chair", description: "Secretly give your opponent a disadvantage", category: "Chess", price: 29.95, stock: 3),
+        Product(name: "Human Chess Board", description: "A fun game for the family", category: "Chess", price: 75.0, stock: 2),
+        Product(name: "Bling-Bling King", description: "Gold-plated, diamond studded King", category: "Chess", price: 1200.0, stock: 4)
     ]
     
     override func viewDidLoad() {
@@ -40,8 +41,8 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     // p.39
     func displayTotalStock() {
-        let stockTotal = products.reduce(0) { total, product in
-            return total + product.4
+        let stockTotal = products.reduce(0) { (total, product) in
+            return total + product.stock
         }
         totalStockLabel.text = "\(stockTotal) Products in Stock"
     }
@@ -68,7 +69,7 @@ class ViewController: UIViewController, UITableViewDataSource {
                         }
                         
                         if let level = newStockLevel {
-                            products[id].4 = level
+                            products[id].stock = level
                             cell.stockStepper.value = Double(level)
                             cell.stockField.text = String(level)
                         }
@@ -93,10 +94,10 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         if let cell = cell as? ProductTableCell {
             cell.productId = indexPath.row // p.49
-            cell.nameLabel.text = product.0
-            cell.descriptionLabel.text = product.1
-            cell.stockStepper.value = Double(product.4)
-            cell.stockField.text = "\(product.4)"
+            cell.nameLabel.text = product.name
+            cell.descriptionLabel.text = product.description
+            cell.stockStepper.value = Double(product.stock)
+            cell.stockField.text = "\(product.stock)"
         }
         
         return cell

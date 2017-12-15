@@ -54,8 +54,10 @@ class ViewController: UIViewController, UITableViewDataSource {
             )
         }
         
-        totalStockLabel.text = "\(finalTotals) Products in Stock. "
-            + "Total Value: \(Utils.currencyString(from: finalTotals.1))"
+        totalStockLabel.text = """
+        Total of \(finalTotals.0) Products in Stock.
+        Total Value: \(Utils.currencyString(from: finalTotals.1)).
+        """
     }
     
     

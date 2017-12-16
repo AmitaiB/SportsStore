@@ -17,6 +17,7 @@ class Logger<T: NSObject & NSCopying> {
     }
     
     func log(item: T) {
+        // This is where the Protype Pattern magic happens!
         dataItems.append(item.copy() as! T)
         callback(item)
     }

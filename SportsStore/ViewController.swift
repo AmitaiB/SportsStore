@@ -8,6 +8,11 @@
 
 import UIKit
 
+ fileprivate var handler = { (prod: Product) in
+    print("Change: \(prod.name) \(prod.stockLevel) items in stock.")
+}
+
+
 class ViewController: UIViewController, UITableViewDataSource {
     // p.37
     @IBOutlet weak var totalStockLabel: UILabel!
@@ -15,14 +20,15 @@ class ViewController: UIViewController, UITableViewDataSource {
     // p.44
     @IBOutlet weak var tableView: UITableView!
     
-    // p.29
+    let logger = Logger<Product>(callback: handler)
     
+    // p.29
     var products = [
-        Product(name: "Kayak", description: "A boat for one person", category: "Watersports", price: 275.0, stockLevel: 10),
-        Product(name: "Lifejacket", description: "Protective and fashionable", category: "Watersports", price: 48.95, stockLevel: 14),
-        Product(name: "Soccer Ball", description: "FIFA-approved size and weight", category: "Soccer", price: 19.5, stockLevel: 32),
+        Product(name: "Kayak",        description: "A boat for one person", category: "Watersports", price: 275.0, stockLevel: 10),
+        Product(name: "Lifejacket",   description: "Protective and fashionable", category: "Watersports", price: 48.95, stockLevel: 14),
+        Product(name: "Soccer Ball",  description: "FIFA-approved size and weight", category: "Soccer", price: 19.5, stockLevel: 32),
         Product(name: "Corner Flags", description: "Give your playing field a professional touch", category: "Soccer", price: 34.95, stockLevel: 1),
-        Product(name: "Stadium", description: "Flat-packed 35,000-seat stadium", category: "Soccer", price: 79500.0, stockLevel: 4),
+        Product(name: "Stadium",      description: "Flat-packed 35,000-seat stadium", category: "Soccer", price: 79500.0, stockLevel: 4),
         Product(name: "Thinking Cap", description: "Improve your brain effciency by 75%", category: "Chess", price: 16.0, stockLevel: 8),
         Product(name: "Unsteady Chair", description: "Secretly give your opponent a disadvantage", category: "Chess", price: 29.95, stockLevel: 3),
         Product(name: "Human Chess Board", description: "A fun game for the family", category: "Chess", price: 75.0, stockLevel: 2),
@@ -38,11 +44,6 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         displayTotalStock()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // p.39
@@ -80,6 +81,7 @@ class ViewController: UIViewController, UITableViewDataSource {
                         
                         cell.stockStepper.value = Double(product.stockLevel)
                         cell.stockField.text = String(product.stockLevel)
+                        logger.log(item: product)
                     }
                     break
                 }

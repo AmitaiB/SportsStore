@@ -102,7 +102,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         if let cell = cell as? ProductTableCell {
             cell.product = product // p.49
             cell.nameLabel.text = product.name
-            cell.descriptionLabel.text = product.description
+            cell.descriptionLabel.text = product.productDescription
             cell.stockStepper.value = Double(product.stockLevel)
             cell.stockField.text = "\(product.stockLevel)"
         }

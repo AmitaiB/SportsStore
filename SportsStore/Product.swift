@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Product {
+class Product: NSObject, NSCopying {
     private(set) var name: String
-    private(set) var description: String
+    private(set) var productDescription: String
     private(set) var category: String
     private var stockBackingValue = 0
     private var priceBackingValue = 0.0
@@ -32,8 +32,12 @@ class Product {
     
     init(name aName: String, description aDescription: String, category aCategory: String, price aPrice: Double, stockLevel aStockVal: Int) {
         name = aName
-        description = aDescription
+        productDescription = aDescription
         category = aCategory
+        
+        // Must be called after stored properties, before computed properties
+        super.init()
+        
         price = aPrice
         stockLevel = aStockVal
     }
@@ -41,5 +45,9 @@ class Product {
     
     func calculateTax(rate: Double) -> Double {
         return min(10, price * rate)
+    }
+    
+    func copy(with zone: NSZone? = nil) -> Any {
+        return Product(name: name, description: productDescription, category: category, price: price, stockLevel: stockLevel)
     }
 }

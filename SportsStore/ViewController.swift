@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     // p.44
     @IBOutlet weak var tableView: UITableView!
     
-    let logger = Logger<Product>(callback: handler)
+//    let logger = Logger<Product>(callback: handler)
     
     // p.29
     var products = [
@@ -81,7 +81,7 @@ class ViewController: UIViewController, UITableViewDataSource {
                         
                         cell.stockStepper.value = Double(product.stockLevel)
                         cell.stockField.text = String(product.stockLevel)
-                        logger.log(item: product)
+                        productLogger.log(item: product)
                     }
                     break
                 }

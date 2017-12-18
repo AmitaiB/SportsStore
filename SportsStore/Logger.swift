@@ -11,18 +11,24 @@ import Foundation
 class Logger<T: NSObject & NSCopying> {
     var dataItems = [T]()
     var callback: (T) -> ()
+    var arrayQ = DispatchQueue(label: "arrayQ", attributes: .concurrent)
     
     init(callback: @escaping (T) -> ()) {
         self.callback = callback
     }
     
     func log(item: T) {
-        // This is where the Protype Pattern magic happens!
-        dataItems.append(item.copy() as! T)
-        callback(item)
+        // Barrier blocks are like temporary synchronous queue-mode - will finish all read ops before execution.
+        arrayQ.async(flags: .barrier) {
+            // This is where the Protype Pattern magic happens!
+            self.dataItems.append(item.copy() as! T)
+            self.callback(item)
+        }
     }
     
     func processItems(callback: (T)->() ) {
-        dataItems.forEach { callback($0) }
+        arrayQ.sync {
+            dataItems.forEach { callback($0) }
+        }
     }
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3830E8971FEB757800B15D85 /* NetworkPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830E8961FEB757800B15D85 /* NetworkPool.swift */; };
 		3830E8991FEB75A400B15D85 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830E8981FEB75A400B15D85 /* NetworkConnection.swift */; };
+		3830E89B1FEB78C500B15D85 /* ProductDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830E89A1FEB78C500B15D85 /* ProductDataStore.swift */; };
+		3830E89D1FEB79E800B15D85 /* Optionals+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830E89C1FEB79E800B15D85 /* Optionals+Extensions.swift */; };
 		3837B4971FE376F600FCFF92 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B4961FE376F600FCFF92 /* Product.swift */; };
 		38CD404D1FE37CB8000897DE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CD404C1FE37CB8000897DE /* Utils.swift */; };
 		38DB535C1FE180F500DB6DC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DB535B1FE180F500DB6DC5 /* AppDelegate.swift */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		3830E8961FEB757800B15D85 /* NetworkPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPool.swift; sourceTree = "<group>"; };
 		3830E8981FEB75A400B15D85 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
+		3830E89A1FEB78C500B15D85 /* ProductDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataStore.swift; sourceTree = "<group>"; };
+		3830E89C1FEB79E800B15D85 /* Optionals+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optionals+Extensions.swift"; sourceTree = "<group>"; };
 		3837B4961FE376F600FCFF92 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		38CD404C1FE37CB8000897DE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		38DB53581FE180F500DB6DC5 /* SportsStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +95,7 @@
 			children = (
 				3830E8961FEB757800B15D85 /* NetworkPool.swift */,
 				3830E8981FEB75A400B15D85 /* NetworkConnection.swift */,
+				3830E89A1FEB78C500B15D85 /* ProductDataStore.swift */,
 			);
 			path = "Object Pool (Ch.7)";
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 				3837B4961FE376F600FCFF92 /* Product.swift */,
 				38E6E53B1FE586D9003A3335 /* Logger.swift */,
 				38CD404C1FE37CB8000897DE /* Utils.swift */,
+				3830E89C1FEB79E800B15D85 /* Optionals+Extensions.swift */,
 				38DB535F1FE180F500DB6DC5 /* Main.storyboard */,
 				38DB53621FE180F500DB6DC5 /* Assets.xcassets */,
 				38DB53641FE180F500DB6DC5 /* LaunchScreen.storyboard */,
@@ -286,6 +292,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				38CD404D1FE37CB8000897DE /* Utils.swift in Sources */,
+				3830E89D1FEB79E800B15D85 /* Optionals+Extensions.swift in Sources */,
+				3830E89B1FEB78C500B15D85 /* ProductDataStore.swift in Sources */,
 				38E6E53C1FE586D9003A3335 /* Logger.swift in Sources */,
 				38DB538A1FE18D2B00DB6DC5 /* ProductTableCell.swift in Sources */,
 				3837B4971FE376F600FCFF92 /* Product.swift in Sources */,

@@ -100,6 +100,21 @@
 			path = "Object Pool (Ch.7)";
 			sourceTree = "<group>";
 		};
+		3830E89E1FECBBCD00B15D85 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				38E6E53B1FE586D9003A3335 /* Logger.swift */,
+			);
+			path = Singleton;
+			sourceTree = "<group>";
+		};
+		3830E89F1FECBBED00B15D85 /* Object Pool Variations (Ch. 8) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Object Pool Variations (Ch. 8)";
+			sourceTree = "<group>";
+		};
 		38DB534F1FE180F500DB6DC5 = {
 			isa = PBXGroup;
 			children = (
@@ -123,12 +138,13 @@
 		38DB535A1FE180F500DB6DC5 /* SportsStore */ = {
 			isa = PBXGroup;
 			children = (
+				3830E89F1FECBBED00B15D85 /* Object Pool Variations (Ch. 8) */,
 				3830E8951FEB756000B15D85 /* Object Pool (Ch.7) */,
 				38DB535B1FE180F500DB6DC5 /* AppDelegate.swift */,
 				38DB535D1FE180F500DB6DC5 /* ViewController.swift */,
 				38DB53891FE18D2B00DB6DC5 /* ProductTableCell.swift */,
 				3837B4961FE376F600FCFF92 /* Product.swift */,
-				38E6E53B1FE586D9003A3335 /* Logger.swift */,
+				3830E89E1FECBBCD00B15D85 /* Singleton */,
 				38CD404C1FE37CB8000897DE /* Utils.swift */,
 				3830E89C1FEB79E800B15D85 /* Optionals+Extensions.swift */,
 				38DB535F1FE180F500DB6DC5 /* Main.storyboard */,

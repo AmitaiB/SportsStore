@@ -9,6 +9,7 @@
 import Foundation
 
 class Product: NSObject, NSCopying {
+    // MARK: stored properties
     private(set) var name: String
     private(set) var productDescription: String
     private(set) var category: String
@@ -16,6 +17,7 @@ class Product: NSObject, NSCopying {
     private var priceBackingValue = 0.0
     fileprivate var salesTaxRate  = 0.2
     
+    // MARK: computed properties
     var stockLevel: Int {
         get { return stockBackingValue }
         set { stockBackingValue = max(0, newValue) }
@@ -31,7 +33,11 @@ class Product: NSObject, NSCopying {
         return taxedPrice * Double(stockLevel)
     }
     
+    var upsells: [UpsellOpportunities] {
+        get { return Array() }
+    }
 
+    // MARK: methods
     init(name aName: String,
          description aDescription: String,
          category aCategory: String,
@@ -58,9 +64,23 @@ class Product: NSObject, NSCopying {
         return Product(name: name, description: productDescription, category: category, price: price, stockLevel: stockLevel)
     }
     
-    var upsells: [UpsellOpportunities] {
-        get { return Array() }
+    
+    // factory method
+    class func createProduct(name: String, description: String, category: String, price: Double stockLevel: Int) -> Product {
+        var productType: Product.Type
+        
+        switch category {
+        case "Watersports":
+            productType = WatersportsProduct.self
+        case "Soccer":
+            productType = SoccerProduct.self
+        default:
+            productType = Product.self
+        }
+        
+        return productType(name: name, description: description, category: category, price: price, stockLevel: stockLevel)
     }
+    
 }
 
 enum UpsellOpportunities {
@@ -69,6 +89,8 @@ enum UpsellOpportunities {
     case soccerVideos
 }
 
+
+// MARK: - WatersportsProduct
 class WatersportsProduct: Product {
     required override init(name aName: String, description aDescription: String, category aCategory: String, price aPrice: Double, stockLevel aStockVal: Int)
     {
@@ -82,6 +104,8 @@ class WatersportsProduct: Product {
     }
 }
 
+
+// MARK: - SoccerProduct
 class SoccerProduct: Product {
         required override init(name aName: String, description aDescription: String, category aCategory: String, price aPrice: Double, stockLevel aStockVal: Int)
         {

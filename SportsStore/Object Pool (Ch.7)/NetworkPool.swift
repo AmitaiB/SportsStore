@@ -15,11 +15,9 @@ final class NetworkPool {
     private var connections = [NetworkConnection]()
     private var semaphore: DispatchSemaphore
     private var queue: DispatchQueue
+    private var itemsCreated = 0
     
     private init() {
-        for _ in 0..<connectionCount {
-            connections.append(NetworkConnection())
-        }
         semaphore = DispatchSemaphore(value: connectionCount)
         queue = DispatchQueue(label: "networkpoolQ")
     }
@@ -28,7 +26,12 @@ final class NetworkPool {
         semaphore.wait()
         var result: NetworkConnection? = nil
         queue.sync {
-            result = self.connections.remove(at: 0)
+            if connections.count > 0 {
+                result = connections.remove(at: 0)
+            } else if itemsCreated < connectionCount {
+                result = NetworkConnection()
+                itemsCreated += 1
+            }
         }
         return result!
     }

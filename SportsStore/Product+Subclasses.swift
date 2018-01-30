@@ -38,7 +38,7 @@ class Product: NSObject, NSCopying {
     }
 
     // MARK: methods
-    init(name aName: String,
+    required init(name aName: String,
          description aDescription: String,
          category aCategory: String,
          price aPrice: Double,
@@ -66,7 +66,7 @@ class Product: NSObject, NSCopying {
     
     
     // factory method
-    class func createProduct(name: String, description: String, category: String, price: Double stockLevel: Int) -> Product {
+    class func createProduct(name: String, description: String, category: String, price: Double, stockLevel: Int) -> Product {
         var productType: Product.Type
         
         switch category {
@@ -78,7 +78,7 @@ class Product: NSObject, NSCopying {
             productType = Product.self
         }
         
-        return productType(name: name, description: description, category: category, price: price, stockLevel: stockLevel)
+        return productType.init(name: name, description: description, category: category, price: price, stockLevel: stockLevel)
     }
     
 }
@@ -92,7 +92,7 @@ enum UpsellOpportunities {
 
 // MARK: - WatersportsProduct
 class WatersportsProduct: Product {
-    required override init(name aName: String, description aDescription: String, category aCategory: String, price aPrice: Double, stockLevel aStockVal: Int)
+    required init(name aName: String, description aDescription: String, category aCategory: String, price aPrice: Double, stockLevel aStockVal: Int)
     {
         super.init(name: aName, description: aDescription, category: aCategory, price: aPrice, stockLevel: aStockVal)
         
@@ -107,7 +107,7 @@ class WatersportsProduct: Product {
 
 // MARK: - SoccerProduct
 class SoccerProduct: Product {
-        required override init(name aName: String, description aDescription: String, category aCategory: String, price aPrice: Double, stockLevel aStockVal: Int)
+    required init(name aName: String, description aDescription: String, category aCategory: String, price aPrice: Double, stockLevel aStockVal: Int)
         {
             super.init(name: aName, description: aDescription, category: aCategory, price: aPrice, stockLevel: aStockVal)
             

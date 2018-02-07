@@ -22,6 +22,8 @@
 		38DB537C1FE180F600DB6DC5 /* SportsStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DB537B1FE180F600DB6DC5 /* SportsStoreUITests.swift */; };
 		38DB538A1FE18D2B00DB6DC5 /* ProductTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DB53891FE18D2B00DB6DC5 /* ProductTableCell.swift */; };
 		38E6E53C1FE586D9003A3335 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E6E53B1FE586D9003A3335 /* Logger.swift */; };
+		38FF61F1202BB28D001944C8 /* StockValueImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF61F0202BB28D001944C8 /* StockValueImplementations.swift */; };
+		38FF61F3202BB3C9001944C8 /* StockValueFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF61F2202BB3C9001944C8 /* StockValueFactories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		38DB537D1FE180F600DB6DC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38DB53891FE18D2B00DB6DC5 /* ProductTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableCell.swift; sourceTree = "<group>"; };
 		38E6E53B1FE586D9003A3335 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		38FF61F0202BB28D001944C8 /* StockValueImplementations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockValueImplementations.swift; sourceTree = "<group>"; };
+		38FF61F2202BB3C9001944C8 /* StockValueFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockValueFactories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 		38DB535A1FE180F500DB6DC5 /* SportsStore */ = {
 			isa = PBXGroup;
 			children = (
+				38FF61EF202BB24E001944C8 /* Abstract Factory (ch. 10) */,
 				3830E89F1FECBBED00B15D85 /* Object Pool Variations (Ch. 8) */,
 				3830E8951FEB756000B15D85 /* Object Pool (Ch.7) */,
 				38DB535B1FE180F500DB6DC5 /* AppDelegate.swift */,
@@ -171,6 +176,15 @@
 				38DB537D1FE180F600DB6DC5 /* Info.plist */,
 			);
 			path = SportsStoreUITests;
+			sourceTree = "<group>";
+		};
+		38FF61EF202BB24E001944C8 /* Abstract Factory (ch. 10) */ = {
+			isa = PBXGroup;
+			children = (
+				38FF61F0202BB28D001944C8 /* StockValueImplementations.swift */,
+				38FF61F2202BB3C9001944C8 /* StockValueFactories.swift */,
+			);
+			path = "Abstract Factory (ch. 10)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +330,8 @@
 				3830E8991FEB75A400B15D85 /* NetworkConnection.swift in Sources */,
 				38DB535E1FE180F500DB6DC5 /* ViewController.swift in Sources */,
 				38DB535C1FE180F500DB6DC5 /* AppDelegate.swift in Sources */,
+				38FF61F3202BB3C9001944C8 /* StockValueFactories.swift in Sources */,
+				38FF61F1202BB28D001944C8 /* StockValueImplementations.swift in Sources */,
 				3830E8971FEB757800B15D85 /* NetworkPool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

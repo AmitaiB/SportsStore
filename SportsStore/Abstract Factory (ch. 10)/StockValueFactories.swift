@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Our abstract factory
 class StockTotalFactory {
     enum Currency {
         case usd
@@ -17,14 +18,15 @@ class StockTotalFactory {
     fileprivate(set) var formatter: StockValueFormatter?
     fileprivate(set) var converter: StockValueConverter?
     
-//    class func getFactory(for curr: Currency) -> StockTotalFactory {
-//        return curr == .usd ?
-//    }
+    class func getFactory(for curr: Currency) -> StockTotalFactory {
+        return curr == .usd ?
+            DollarStockTotalFactory.shared : PoundStockTotalFactory.shared
+    }
 }
 
 
 fileprivate class DollarStockTotalFactory: StockTotalFactory {
-    fileprivate override init() {
+    private override init() {
         super.init()
         formatter = DollarStockValueFormatter()
         converter = DollarStockValueConverter()
@@ -34,7 +36,7 @@ fileprivate class DollarStockTotalFactory: StockTotalFactory {
 }
 
 fileprivate class PoundStockTotalFactory: StockTotalFactory {
-    fileprivate override init() {
+    private override init() {
         super.init()
         formatter = PoundStockValueFormatter()
         converter = PoundStockValueConverter()

@@ -44,9 +44,13 @@ class ViewController: UIViewController, UITableViewDataSource {
             )
         }
         
+        let factory = StockTotalFactory.getFactory(for: .gbp)
+        let totalAmount = factory.converter?.convert(total: finalTotals.1)
+        let formatted = factory.formatter?.format(total: totalAmount ?? -1)
+        
         totalStockLabel.text = """
-        Total of \(finalTotals.0) Products in Stock.
-        Total Value: \(Utils.currencyString(from: finalTotals.1)).
+        Total of \(finalTotals.0) Products in Stock
+        Total Value: \(formatted ?? "Error, no value")
         """
     }
     

@@ -44,7 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             )
         }
         
-        let factory = StockTotalFactory.getFactory(for: .gbp)
+        let factory = StockTotalFactory.getFactory(for: .eur)
         let totalAmount = factory.converter?.convert(total: finalTotals.1)
         let formatted = factory.formatter?.format(total: totalAmount ?? -1)
         

@@ -15,7 +15,7 @@ class ChangeRecord: CustomStringConvertible {
     private let innerTag    : String
     private let value       : String
     
-    private init(outer: String, name: String, category: String, inner: String, value: String) {
+    fileprivate init(outer: String, name: String, category: String, inner: String, value: String) {
         outerTag    = outer
         productName = name
         catName     = category
@@ -25,10 +25,37 @@ class ChangeRecord: CustomStringConvertible {
     
     var description: String {
         return """
-        <\(outerTag)><\(innerTag) name="\(productName)"  category="\(catName)">\(value)</\(innerTag)></\(outerTag)>
+        <\(outerTag)><\(innerTag) name="\(productName)" category="\(catName)">\(value)</\(innerTag)></\(outerTag)>
         """
     }
 }
 
 
+class ChangeRecordBuilder {
+    var outerTag    : String
+    var innerTag    : String
+    var productName : String?
+    var category    : String?
+    var value       : String?
 
+    init() {
+        outerTag = "change"
+        innerTag = "product"
+    }
+    
+    var changeRecord: ChangeRecord? {
+        get {
+            if
+                let productName = productName,
+                let category    = category,
+                let value       = value
+            {
+                return ChangeRecord(outer: outerTag, name: productName, category: category, inner: innerTag, value: value)
+            }
+            
+            return nil
+        }
+    }
+    /// Problem: How do we know if a required value is missing from the builder? Better to implement it with functions like in the earlier example in the book.
+
+}

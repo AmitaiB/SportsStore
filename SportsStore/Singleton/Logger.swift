@@ -9,7 +9,18 @@
 import Foundation
 
 let productLogger = Logger<Product>(callback: { (prod: Product) in
-    print("Change: \(prod.name) \(prod.stockLevel) items in stock.")
+    
+    var builder = ChangeRecordBuilder()
+    builder.productName = prod.name
+    builder.category    = prod.category
+    builder.value       = String(prod.stockLevel)
+    builder.outerTag    = "stockChange"
+    
+    if let changeRecord = builder.changeRecord {
+        print(changeRecord)
+    }
+    
+//    print("Change: \(prod.name) \(prod.stockLevel) items in stock.")
 })
 
 class Logger<T: NSObject & NSCopying> {

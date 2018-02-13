@@ -25,6 +25,7 @@
 		38FF61F1202BB28D001944C8 /* StockValueImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF61F0202BB28D001944C8 /* StockValueImplementations.swift */; };
 		38FF61F3202BB3C9001944C8 /* StockValueFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF61F2202BB3C9001944C8 /* StockValueFactories.swift */; };
 		38FF620F202C09E4001944C8 /* ChangeRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF620E202C09E4001944C8 /* ChangeRecord.swift */; };
+		38FF624820333005001944C8 /* Euro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF624720333005001944C8 /* Euro.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		38FF61F0202BB28D001944C8 /* StockValueImplementations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockValueImplementations.swift; sourceTree = "<group>"; };
 		38FF61F2202BB3C9001944C8 /* StockValueFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockValueFactories.swift; sourceTree = "<group>"; };
 		38FF620E202C09E4001944C8 /* ChangeRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRecord.swift; sourceTree = "<group>"; };
+		38FF624720333005001944C8 /* Euro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Euro.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 		38DB535A1FE180F500DB6DC5 /* SportsStore */ = {
 			isa = PBXGroup;
 			children = (
+				38FF624620332FEC001944C8 /* Adapter (Ch. 12) */,
 				38FF620D202C09C1001944C8 /* ChangeRecord (Builder Pattern, ch. 11) */,
 				38FF61EF202BB24E001944C8 /* Abstract Factory (ch. 10) */,
 				3830E89F1FECBBED00B15D85 /* Object Pool Variations (Ch. 8) */,
@@ -196,6 +199,14 @@
 				38FF620E202C09E4001944C8 /* ChangeRecord.swift */,
 			);
 			path = "ChangeRecord (Builder Pattern, ch. 11)";
+			sourceTree = "<group>";
+		};
+		38FF624620332FEC001944C8 /* Adapter (Ch. 12) */ = {
+			isa = PBXGroup;
+			children = (
+				38FF624720333005001944C8 /* Euro.swift */,
+			);
+			path = "Adapter (Ch. 12)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +347,7 @@
 				3830E89D1FEB79E800B15D85 /* Optionals+Extensions.swift in Sources */,
 				3830E89B1FEB78C500B15D85 /* ProductDataStore.swift in Sources */,
 				38E6E53C1FE586D9003A3335 /* Logger.swift in Sources */,
+				38FF624820333005001944C8 /* Euro.swift in Sources */,
 				38DB538A1FE18D2B00DB6DC5 /* ProductTableCell.swift in Sources */,
 				3837B4971FE376F600FCFF92 /* Product+Subclasses.swift in Sources */,
 				3830E8991FEB75A400B15D85 /* NetworkConnection.swift in Sources */,

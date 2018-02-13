@@ -13,15 +13,24 @@ class StockTotalFactory {
     enum Currency {
         case usd
         case gbp
+        case eur
     }
     
     fileprivate(set) var formatter: StockValueFormatter?
     fileprivate(set) var converter: StockValueConverter?
     
     class func getFactory(for curr: Currency) -> StockTotalFactory {
-        return curr == .usd ?
-            DollarStockTotalFactory.shared : PoundStockTotalFactory.shared
-    }
+        var factory: StockTotalFactory
+        switch curr {
+        case .usd:
+            factory = DollarStockTotalFactory.shared
+        case .gbp:
+            factory = PoundStockTotalFactory.shared
+        case .eur:
+            factory = EuroHandlerAdapter.shared
+        }
+        
+        return factory
 }
 
 
@@ -43,7 +52,30 @@ fileprivate class PoundStockTotalFactory: StockTotalFactory {
     }
     
     static let shared = PoundStockTotalFactory()
+    }
 }
 
+fileprivate class EuroHandlerAdapter: StockTotalFactory, StockValueFormatter, StockValueConverter {
+    static let shared = EuroHandlerAdapter()
+    
+    // StockValueFormatter protocol
+    func format(total: Double) -> String {
+        return euroHandler.getDisplayString(for: total)
+    }
+    
+    // StockValueConverter protocol
+    func convert(total: Double) -> Double {
+        return euroHandler.getCurrencyAmount(total)
+    }
+    
+    private override init() {
+        super.init()
+        // StockTotalFactory protocol
+        formatter = self
+        converter = self
+    }
+    
+    private let euroHandler = EuroHandler()
+}
 
 

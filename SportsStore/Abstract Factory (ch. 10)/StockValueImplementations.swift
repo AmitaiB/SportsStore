@@ -8,6 +8,8 @@
 
 import Foundation
 
+public let USD_TO_GBP_RATE = 0.60338
+
 // MARK: - StockValueFormatters
 protocol StockValueFormatter {
     func format(total: Double) -> String
@@ -27,7 +29,6 @@ class PoundStockValueFormatter: StockValueFormatter {
     }
 }
 
-
 // MARK:- StockValueConverters
 protocol StockValueConverter {
     func convert(total: Double) -> Double
@@ -41,6 +42,6 @@ class DollarStockValueConverter: StockValueConverter {
 
 class PoundStockValueConverter: StockValueConverter {
     func convert(total: Double) -> Double {
-        return 0.60338 * total
+        return  USD_TO_GBP_RATE * total
     }
 }

@@ -10,8 +10,8 @@ import Foundation
 
 // Our abstract factory
 class StockTotalFactory {
-    enum Currency {
-        case usd
+    enum Currency: Int {
+        case usd 
         case gbp
         case eur
     }

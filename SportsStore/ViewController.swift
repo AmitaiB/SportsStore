@@ -37,16 +37,16 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
         displayTotalStock()
     }
-
-    func displayTotalStock() {
+    
+    func displayTotalStock(in currency: StockTotalFactory.Currency = .usd) {
         let finalTotals: (Int, Double) = productStore.products.reduce((0, 0.0)) { (totals, product) in
             return (
                 totals.0 + product.stockLevel,
                 totals.1 + product.stockValue
             )
         }
-        
-        let factory = StockTotalFactory.getFactory(for: .eur)
+
+        let factory = StockTotalFactory.getFactory(for: currency)
         let totalAmount = factory.converter?.convert(total: finalTotals.1)
         let formatted = factory.formatter?.format(total: totalAmount ?? -1)
         
@@ -54,6 +54,13 @@ class ViewController: UIViewController, UITableViewDataSource {
         Total of \(finalTotals.0) Products in Stock
         Total Value: \(formatted ?? "Error, no value")
         """
+    }
+    
+    @IBAction func currencyChanged(_ sender: UISegmentedControl) {
+        if let selectedCurrency = StockTotalFactory.Currency(rawValue: sender.selectedSegmentIndex)
+        {
+            displayTotalStock(in: selectedCurrency)
+        }
     }
     
     

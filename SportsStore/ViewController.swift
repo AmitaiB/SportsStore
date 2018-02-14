@@ -21,19 +21,21 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         displayTotalStock()
-        
-        productStore.callback = { (aProduct: Product) in
-            for cell in self.tableView.visibleCells {
-                if
-                    let pcell = cell as? ProductTableCell,
-                    pcell.product?.name == aProduct.name
-                {
-                    pcell.stockStepper.value = Double(aProduct.stockValue)
-                    pcell.stockField.text = String(aProduct.stockLevel)
-                }
+        let bridge = EventBridge(callback: updateStockLevel)
+        productStore.callback = bridge.inputCallback
+    }
+    
+    func updateStockLevel(name: String, level: Int) {
+        for cell in tableView.visibleCells {
+            if
+                let pcell = cell as? ProductTableCell,
+                pcell.product?.name == name
+            {
+                pcell.stockStepper.value = Double(level)
+                pcell.stockField.text = String(level)
             }
-            self.displayTotalStock()
         }
+        displayTotalStock()
     }
 
     func displayTotalStock() {

@@ -26,6 +26,7 @@
 		38FF61F3202BB3C9001944C8 /* StockValueFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF61F2202BB3C9001944C8 /* StockValueFactories.swift */; };
 		38FF620F202C09E4001944C8 /* ChangeRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF620E202C09E4001944C8 /* ChangeRecord.swift */; };
 		38FF624820333005001944C8 /* Euro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF624720333005001944C8 /* Euro.swift */; };
+		38FF626C203492A5001944C8 /* EventBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF626B203492A5001944C8 /* EventBridge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		38FF61F2202BB3C9001944C8 /* StockValueFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockValueFactories.swift; sourceTree = "<group>"; };
 		38FF620E202C09E4001944C8 /* ChangeRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRecord.swift; sourceTree = "<group>"; };
 		38FF624720333005001944C8 /* Euro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Euro.swift; sourceTree = "<group>"; };
+		38FF626B203492A5001944C8 /* EventBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBridge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,22 +148,20 @@
 		38DB535A1FE180F500DB6DC5 /* SportsStore */ = {
 			isa = PBXGroup;
 			children = (
+				38DB53641FE180F500DB6DC5 /* LaunchScreen.storyboard */,
+				38DB535B1FE180F500DB6DC5 /* AppDelegate.swift */,
+				38DB535D1FE180F500DB6DC5 /* ViewController.swift */,
+				38DB53891FE18D2B00DB6DC5 /* ProductTableCell.swift */,
+				3837B4961FE376F600FCFF92 /* Product+Subclasses.swift */,
+				38FF626A20349287001944C8 /* Bridge (Ch. 13) */,
 				38FF624620332FEC001944C8 /* Adapter (Ch. 12) */,
 				38FF620D202C09C1001944C8 /* ChangeRecord (Builder Pattern, ch. 11) */,
 				38FF61EF202BB24E001944C8 /* Abstract Factory (ch. 10) */,
 				3830E89F1FECBBED00B15D85 /* Object Pool Variations (Ch. 8) */,
 				3830E8951FEB756000B15D85 /* Object Pool (Ch.7) */,
-				38DB535B1FE180F500DB6DC5 /* AppDelegate.swift */,
-				38DB535D1FE180F500DB6DC5 /* ViewController.swift */,
-				38DB53891FE18D2B00DB6DC5 /* ProductTableCell.swift */,
-				3837B4961FE376F600FCFF92 /* Product+Subclasses.swift */,
 				3830E89E1FECBBCD00B15D85 /* Singleton */,
-				38CD404C1FE37CB8000897DE /* Utils.swift */,
-				3830E89C1FEB79E800B15D85 /* Optionals+Extensions.swift */,
-				38DB535F1FE180F500DB6DC5 /* Main.storyboard */,
-				38DB53621FE180F500DB6DC5 /* Assets.xcassets */,
-				38DB53641FE180F500DB6DC5 /* LaunchScreen.storyboard */,
-				38DB53671FE180F500DB6DC5 /* Info.plist */,
+				38FF626820349230001944C8 /* Utilities & Misc */,
+				38FF62692034925F001944C8 /* iBoilerPlate */,
 			);
 			path = SportsStore;
 			sourceTree = "<group>";
@@ -207,6 +207,33 @@
 				38FF624720333005001944C8 /* Euro.swift */,
 			);
 			path = "Adapter (Ch. 12)";
+			sourceTree = "<group>";
+		};
+		38FF626820349230001944C8 /* Utilities & Misc */ = {
+			isa = PBXGroup;
+			children = (
+				38CD404C1FE37CB8000897DE /* Utils.swift */,
+				3830E89C1FEB79E800B15D85 /* Optionals+Extensions.swift */,
+			);
+			path = "Utilities & Misc";
+			sourceTree = "<group>";
+		};
+		38FF62692034925F001944C8 /* iBoilerPlate */ = {
+			isa = PBXGroup;
+			children = (
+				38DB535F1FE180F500DB6DC5 /* Main.storyboard */,
+				38DB53621FE180F500DB6DC5 /* Assets.xcassets */,
+				38DB53671FE180F500DB6DC5 /* Info.plist */,
+			);
+			path = iBoilerPlate;
+			sourceTree = "<group>";
+		};
+		38FF626A20349287001944C8 /* Bridge (Ch. 13) */ = {
+			isa = PBXGroup;
+			children = (
+				38FF626B203492A5001944C8 /* EventBridge.swift */,
+			);
+			path = "Bridge (Ch. 13)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +381,7 @@
 				38DB535E1FE180F500DB6DC5 /* ViewController.swift in Sources */,
 				38DB535C1FE180F500DB6DC5 /* AppDelegate.swift in Sources */,
 				38FF61F3202BB3C9001944C8 /* StockValueFactories.swift in Sources */,
+				38FF626C203492A5001944C8 /* EventBridge.swift in Sources */,
 				38FF620F202C09E4001944C8 /* ChangeRecord.swift in Sources */,
 				38FF61F1202BB28D001944C8 /* StockValueImplementations.swift in Sources */,
 				3830E8971FEB757800B15D85 /* NetworkPool.swift in Sources */,
@@ -524,7 +552,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8VC65F749H;
-				INFOPLIST_FILE = SportsStore/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SportsStore/iBoilerPlate/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apress.spongeBrain.SportsStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -539,7 +567,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8VC65F749H;
-				INFOPLIST_FILE = SportsStore/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SportsStore/iBoilerPlate/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apress.spongeBrain.SportsStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";

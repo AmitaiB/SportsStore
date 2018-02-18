@@ -55,7 +55,7 @@ class Product: NSObject, NSCopying {
     
     
     // factory method
-    class func createProduct(name: String, description: String, category: String, price: Double, stockLevel: Int) -> Product {
+    class func create(name: String, description: String, category: String, price: Double, stockLevel: Int) -> Product {
         var productType: Product.Type
         
         switch category {

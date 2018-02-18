@@ -29,14 +29,9 @@ class Product: NSObject, NSCopying {
     }
     
     var stockValue: Double {
-        let taxedPrice = price * (1 + salesTaxRate)
-        return taxedPrice * Double(stockLevel)
+        get { return price * Double(stockLevel) }
     }
     
-    var upsells: [UpsellOpportunities] {
-        get { return Array() }
-    }
-
     // MARK: methods
     required init(name: String,
          description: String,
@@ -53,10 +48,6 @@ class Product: NSObject, NSCopying {
         self.stockLevel         = stockLevel
     }
     
-    
-    func calculateTax(rate: Double) -> Double {
-        return min(10, price * rate)
-    }
     
     func copy(with zone: NSZone? = nil) -> Any {
         return Product(name: name, description: productDescription, category: category, price: price, stockLevel: stockLevel)
@@ -79,12 +70,26 @@ class Product: NSObject, NSCopying {
         return productType.init(name: name, description: description, category: category, price: price, stockLevel: stockLevel)
     }
     
+    override var description: String { return productDescription }
 }
 
-enum UpsellOpportunities {
-    case swimmingLessons
-    case mapOfLakes
-    case soccerVideos
+
+class ProductComposite: Product {
+    private let products: [Product]
+    
+    required init(name: String, description: String, category: String, price: Double, stockLevel: Int) {
+        fatalError("Not implemented")
+    }
+    
+    init(name: String, description: String, category: String, stockLevel: Int, products: Product...) {
+        self.products = products
+        super.init(name: name, description: description, category: category, price: 0, stockLevel: stockLevel)
+    }
+    
+    
+    override var price: Double {
+        return products.reduce(0, {total, p in total + p.price})
+    }
 }
 
 
@@ -96,24 +101,16 @@ class WatersportsProduct: Product {
         
         salesTaxRate = 0.10
     }
-    
-    override var upsells: [UpsellOpportunities] {
-        return [.swimmingLessons, .mapOfLakes]
-    }
 }
 
 
 // MARK: - SoccerProduct
 class SoccerProduct: Product {
-    required init(name aName: String, description aDescription: String, category aCategory: String, price aPrice: Double, stockLevel aStockVal: Int)
-        {
-            super.init(name: aName, description: aDescription, category: aCategory, price: aPrice, stockLevel: aStockVal)
-            
-            salesTaxRate = 0.25
-        }
+    required init(name: String, description: String, category: String, price: Double, stockLevel: Int)
+    {
+        super.init(name: name, description: description, category: category, price: price, stockLevel: stockLevel)
         
-        override var upsells: [UpsellOpportunities] {
-            return [.soccerVideos]
+            salesTaxRate = 0.25
         }
 }
 

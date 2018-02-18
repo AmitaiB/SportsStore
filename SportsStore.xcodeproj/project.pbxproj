@@ -12,6 +12,7 @@
 		3830E89B1FEB78C500B15D85 /* ProductDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830E89A1FEB78C500B15D85 /* ProductDataStore.swift */; };
 		3830E89D1FEB79E800B15D85 /* Optionals+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830E89C1FEB79E800B15D85 /* Optionals+Extensions.swift */; };
 		3837B4971FE376F600FCFF92 /* Product+Subclasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B4961FE376F600FCFF92 /* Product+Subclasses.swift */; };
+		38C979372036861600716BBF /* ProductDecorators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C979362036861600716BBF /* ProductDecorators.swift */; };
 		38CD404D1FE37CB8000897DE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CD404C1FE37CB8000897DE /* Utils.swift */; };
 		38DB535C1FE180F500DB6DC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DB535B1FE180F500DB6DC5 /* AppDelegate.swift */; };
 		38DB535E1FE180F500DB6DC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DB535D1FE180F500DB6DC5 /* ViewController.swift */; };
@@ -52,6 +53,7 @@
 		3830E89A1FEB78C500B15D85 /* ProductDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataStore.swift; sourceTree = "<group>"; };
 		3830E89C1FEB79E800B15D85 /* Optionals+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optionals+Extensions.swift"; sourceTree = "<group>"; };
 		3837B4961FE376F600FCFF92 /* Product+Subclasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+Subclasses.swift"; sourceTree = "<group>"; };
+		38C979362036861600716BBF /* ProductDecorators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDecorators.swift; sourceTree = "<group>"; };
 		38CD404C1FE37CB8000897DE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		38DB53581FE180F500DB6DC5 /* SportsStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DB535B1FE180F500DB6DC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,14 @@
 			path = "Object Pool Variations (Ch. 8)";
 			sourceTree = "<group>";
 		};
+		38C979352036860200716BBF /* Decorator (Ch. 14) */ = {
+			isa = PBXGroup;
+			children = (
+				38C979362036861600716BBF /* ProductDecorators.swift */,
+			);
+			path = "Decorator (Ch. 14)";
+			sourceTree = "<group>";
+		};
 		38DB534F1FE180F500DB6DC5 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +163,7 @@
 				38DB535D1FE180F500DB6DC5 /* ViewController.swift */,
 				38DB53891FE18D2B00DB6DC5 /* ProductTableCell.swift */,
 				3837B4961FE376F600FCFF92 /* Product+Subclasses.swift */,
+				38C979352036860200716BBF /* Decorator (Ch. 14) */,
 				38FF626A20349287001944C8 /* Bridge (Ch. 13) */,
 				38FF624620332FEC001944C8 /* Adapter (Ch. 12) */,
 				38FF620D202C09C1001944C8 /* ChangeRecord (Builder Pattern, ch. 11) */,
@@ -379,6 +390,7 @@
 				3837B4971FE376F600FCFF92 /* Product+Subclasses.swift in Sources */,
 				3830E8991FEB75A400B15D85 /* NetworkConnection.swift in Sources */,
 				38DB535E1FE180F500DB6DC5 /* ViewController.swift in Sources */,
+				38C979372036861600716BBF /* ProductDecorators.swift in Sources */,
 				38DB535C1FE180F500DB6DC5 /* AppDelegate.swift in Sources */,
 				38FF61F3202BB3C9001944C8 /* StockValueFactories.swift in Sources */,
 				38FF626C203492A5001944C8 /* EventBridge.swift in Sources */,

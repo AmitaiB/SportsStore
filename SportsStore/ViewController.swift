@@ -120,12 +120,12 @@ class ViewController: UIViewController, UITableViewDataSource {
         let product = productStore.products[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
         
-        if let cell = cell as? ProductTableCell {
-            cell.product = product // p.49
-            cell.nameLabel.text = product.name
-            cell.descriptionLabel.text = product.productDescription
-            cell.stockStepper.value = Double(product.stockLevel)
-            cell.stockField.text = "\(product.stockLevel)"
+        if let productCell = cell as? ProductTableCell {
+            productCell.product               = product // p.49
+            productCell.nameLabel.text        = product.name
+            productCell.descriptionLabel.text = product.productDescription
+            productCell.stockStepper.value    = Double(product.stockLevel)
+            productCell.stockField.text       = "\(product.stockLevel)"
         }
         
         return cell

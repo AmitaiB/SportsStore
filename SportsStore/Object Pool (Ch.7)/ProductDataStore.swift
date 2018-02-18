@@ -20,26 +20,43 @@ final class ProductDataStore {
     }
     
     private func loadData() -> [Product] {
-        for aProduct in productData {
+        var products = [Product]()
+        
+        for product in productData {
+            var p: Product = LowStockIncreaseDecorator(product: product)
+            if p.category == "Soccer" {
+                p = SoccerDecreaseDecorator(product: p)
+            }
+            
             networkQ.async {
                 let stockConn = NetworkPool.getConnection()
-                let level = stockConn.getStockLevel(name: aProduct.name)
+                let level = stockConn.getStockLevel(name: product.name)
                 if let level = level {
-                    aProduct.stockLevel = level
+                    product.stockLevel = level
                     self.uiQ.async {
                         if let callback = self.callback {
-                            callback(aProduct)
+                            callback(product)
                         }
                     }
                 }
                 NetworkPool.returnA(connection: stockConn)
             }
+            products.append(p)
         }
-        return productData
+        return products
     }
     
     
     private var productData: [Product] = [
+        ProductComposite(name: "Running Pack", description: "Complete Running Outfit", category: "Running", stockLevel: 10, products:
+            Product.createProduct(name: "Shirt", description: "Running Shirt", category: "Running", price: 42, stockLevel: 10),
+            Product.createProduct(name: "Shorts", description: "Running Shorts", category: "Running", price: 30, stockLevel: 10),
+            Product.createProduct(name: "Shoes", description: "Running Shoes", category: "Running", price: 120, stockLevel: 10),
+            ProductComposite(name: "Headgear", description: "Hat, etc.", category: "Running", stockLevel: 10, products:
+               Product.createProduct(name: "Hat", description: "Running Hat", category: "Running", price: 10, stockLevel: 10),
+               Product.createProduct(name: "Sunglasses", description: "Glasses", category: "Running", price: 10, stockLevel: 10)
+            )
+        ),
         Product.createProduct(name: "Kayak",        description: "A boat for one person", category: "Watersports", price: 275.0, stockLevel: 0),
         Product.createProduct(name: "Lifejacket",   description: "Protective and fashionable", category: "Watersports", price: 48.95, stockLevel: 0),
         Product.createProduct(name: "Soccer Ball",  description: "FIFA-approved size and weight", category: "Soccer", price: 19.5, stockLevel: 0),
@@ -50,4 +67,9 @@ final class ProductDataStore {
         Product.createProduct(name: "Human Chess Board", description: "A fun game for the family", category: "Chess", price: 75.0, stockLevel: 0),
         Product.createProduct(name: "Bling-Bling King", description: "Gold-plated, diamond studded King", category: "Chess", price: 1200.0, stockLevel: 0)
     ]
+    
 }
+
+
+
+

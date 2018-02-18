@@ -38,21 +38,19 @@ class Product: NSObject, NSCopying {
     }
 
     // MARK: methods
-    required init(name aName: String,
-         description aDescription: String,
-         category aCategory: String,
-         price aPrice: Double,
-         stockLevel aStockVal: Int)
+    required init(name: String,
+         description: String,
+         category: String,
+         price: Double,
+         stockLevel: Int)
     {
-        name = aName
-        productDescription = aDescription
-        category = aCategory
-        
+        self.name               = name
+        self.productDescription = description
+        self.category           = category
         // Must be called after stored properties, before computed properties
         super.init()
-        
-        price = aPrice
-        stockLevel = aStockVal
+        self.price              = price
+        self.stockLevel         = stockLevel
     }
     
     
@@ -92,9 +90,9 @@ enum UpsellOpportunities {
 
 // MARK: - WatersportsProduct
 class WatersportsProduct: Product {
-    required init(name aName: String, description aDescription: String, category aCategory: String, price aPrice: Double, stockLevel aStockVal: Int)
+    required init(name: String, description: String, category: String, price: Double, stockLevel: Int)
     {
-        super.init(name: aName, description: aDescription, category: aCategory, price: aPrice, stockLevel: aStockVal)
+        super.init(name: name, description: description, category: category, price: price, stockLevel: stockLevel)
         
         salesTaxRate = 0.10
     }

@@ -63,33 +63,50 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
     }
     
-    
     // p.47
     @IBAction func stockLevelDidChange(_ sender: Any) {
-        if var currentCell = sender as? UIView {
-            while (true) {
-                currentCell = currentCell.superview!
-                if let cell = currentCell as? ProductTableCell {
-                    if let product = cell.product {
-                        if let stepper = sender as? UIStepper {
-                            product.stockLevel = Int(stepper.value)
-                        } else if
-                            let textfield = sender as? UITextField,
-                            let text = textfield.text {
-                                if let newValue = Int(text) {
-                                    product.stockLevel = newValue
-                            }
-                        }
-                        
-                        cell.stockStepper.value = Double(product.stockLevel)
-                        cell.stockField.text = String(product.stockLevel)
-                        productLogger.log(item: product)
-                    }
-                    break
-                }
-            }
-            displayTotalStock()
+        // grab a reference to the cell and its product
+        guard
+            let productCell = productCellFor(sender : sender),
+            let product     = productCell.product
+            else { return }
+        
+        
+        // 𝚫Stepper? Update product and textfield
+        if let stepper = sender as? UIStepper {
+            let newValue = Int(stepper.value)
+            product.stockLevel = newValue
+            productCell.stockField.text = String(newValue)
         }
+        
+        // 𝚫TextField? Update product and stepper
+        if
+            let textfield = sender as? UITextField,
+            let text = textfield.text,
+            let newValue = Int(text)
+        {
+            product.stockLevel = newValue
+            productCell.stockStepper.value = Double(newValue)
+        }
+        
+        productLogger.log(item: product)
+        displayTotalStock()
+        
+    }
+  
+    /// Climb the view heirarchy to grab a reference to the ProductTableCell
+    fileprivate func productCellFor(sender: Any) -> ProductTableCell? {
+        var currentView = sender as? UIView
+        
+        while currentView != nil {
+            if let productCell = currentView as? ProductTableCell {
+                return productCell
+            }
+            else {
+                currentView = currentView?.superview
+            }
+        }
+        return nil
     }
     
     

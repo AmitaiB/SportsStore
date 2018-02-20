@@ -12,6 +12,7 @@
 		3830E89B1FEB78C500B15D85 /* ProductDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830E89A1FEB78C500B15D85 /* ProductDataStore.swift */; };
 		3830E89D1FEB79E800B15D85 /* Optionals+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830E89C1FEB79E800B15D85 /* Optionals+Extensions.swift */; };
 		3837B4971FE376F600FCFF92 /* Product+Subclasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B4961FE376F600FCFF92 /* Product+Subclasses.swift */; };
+		3844ED43203C7F02005A36FB /* StockTotalFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3844ED42203C7F02005A36FB /* StockTotalFacade.swift */; };
 		38C979372036861600716BBF /* ProductDecorators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C979362036861600716BBF /* ProductDecorators.swift */; };
 		38CD404D1FE37CB8000897DE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CD404C1FE37CB8000897DE /* Utils.swift */; };
 		38DB535C1FE180F500DB6DC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DB535B1FE180F500DB6DC5 /* AppDelegate.swift */; };
@@ -53,6 +54,7 @@
 		3830E89A1FEB78C500B15D85 /* ProductDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataStore.swift; sourceTree = "<group>"; };
 		3830E89C1FEB79E800B15D85 /* Optionals+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optionals+Extensions.swift"; sourceTree = "<group>"; };
 		3837B4961FE376F600FCFF92 /* Product+Subclasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+Subclasses.swift"; sourceTree = "<group>"; };
+		3844ED42203C7F02005A36FB /* StockTotalFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTotalFacade.swift; sourceTree = "<group>"; };
 		38C979362036861600716BBF /* ProductDecorators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDecorators.swift; sourceTree = "<group>"; };
 		38CD404C1FE37CB8000897DE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		38DB53581FE180F500DB6DC5 /* SportsStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +129,14 @@
 			path = "Object Pool Variations (Ch. 8)";
 			sourceTree = "<group>";
 		};
+		3844ED41203C7EE0005A36FB /* Facade (Ch. 16) */ = {
+			isa = PBXGroup;
+			children = (
+				3844ED42203C7F02005A36FB /* StockTotalFacade.swift */,
+			);
+			path = "Facade (Ch. 16)";
+			sourceTree = "<group>";
+		};
 		38C979352036860200716BBF /* Decorator (Ch. 14) */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +173,7 @@
 				38DB535D1FE180F500DB6DC5 /* ViewController.swift */,
 				38DB53891FE18D2B00DB6DC5 /* ProductTableCell.swift */,
 				3837B4961FE376F600FCFF92 /* Product+Subclasses.swift */,
+				3844ED41203C7EE0005A36FB /* Facade (Ch. 16) */,
 				38C979352036860200716BBF /* Decorator (Ch. 14) */,
 				38FF626A20349287001944C8 /* Bridge (Ch. 13) */,
 				38FF624620332FEC001944C8 /* Adapter (Ch. 12) */,
@@ -386,6 +397,7 @@
 				3830E89B1FEB78C500B15D85 /* ProductDataStore.swift in Sources */,
 				38E6E53C1FE586D9003A3335 /* Logger.swift in Sources */,
 				38FF624820333005001944C8 /* Euro.swift in Sources */,
+				3844ED43203C7F02005A36FB /* StockTotalFacade.swift in Sources */,
 				38DB538A1FE18D2B00DB6DC5 /* ProductTableCell.swift in Sources */,
 				3837B4971FE376F600FCFF92 /* Product+Subclasses.swift in Sources */,
 				3830E8991FEB75A400B15D85 /* NetworkConnection.swift in Sources */,

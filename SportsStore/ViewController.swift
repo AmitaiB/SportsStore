@@ -45,11 +45,9 @@ class ViewController: UIViewController, UITableViewDataSource {
                 totals.1 + product.stockValue
             )
         }
-
-        let factory = StockTotalFactory.getFactory(for: currency)
-        let totalAmount = factory.converter?.convert(total: finalTotals.1)
-        let formatted = factory.formatter?.format(total: totalAmount ?? -1)
         
+        let formatted = StockTotalFacade.formatCurrency(amount: finalTotals.1, in: currency)
+
         totalStockLabel.text = """
         Total of \(finalTotals.0) Products in Stock
         Total Value: \(formatted ?? "Error, no value")

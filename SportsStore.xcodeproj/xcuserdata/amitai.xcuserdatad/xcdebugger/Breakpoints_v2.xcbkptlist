@@ -79,13 +79,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsStore/ViewController.swift"
-            timestampString = "540681317.765305"
+            timestampString = "540838144.073674"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "133"
+            endingLineNumber = "133">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -95,13 +93,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsStore/ViewController.swift"
-            timestampString = "540681317.7654099"
+            timestampString = "540838144.074072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "133"
+            endingLineNumber = "133">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

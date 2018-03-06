@@ -9,19 +9,44 @@
 import Foundation
 
 protocol NetConnFlyweight {
-    func getStockLevel(name: String) -> Int?
+    func getStockLevel(_ name: String) -> Int?
 }
 
 class NetConnFlyweightImpl: NetConnFlyweight {
     private let extrinsicData: [String: Int]
     
-    private init(data: [String: Int]) {
+    fileprivate init(data: [String: Int]) {
         extrinsicData = data
     }
     
     // Use getters and hide the backing dictionary in case
     // the implementation of data changes (API will remain the same).
-    func getStockLevel(name: String) -> Int? {
+    func getStockLevel(_ name: String) -> Int? {
         return extrinsicData[name]
+    }
+}
+
+class NetConnFlyweightFactory {
+    class func createFlyweight() -> NetConnFlyweight {
+        return NetConnFlyweightImpl(data: stockData)
+    }
+    
+    private class var stockData: [String: Int] {
+        get {
+            struct singletonWrapper {
+                static let singleton = [
+                    "Kayak": 10,
+                    "Lifejacket": 14,
+                    "Soccer Ball": 32,
+                    "Corner Flags": 1,
+                    "Stadium": 4,
+                    "Thinking Cap": 8,
+                    "Unsteady Chair": 3,
+                    "Human Chess Board": 2,
+                    "Bling-Bling King": 4
+                ]
+            }
+            return singletonWrapper.singleton
+        }
     }
 }

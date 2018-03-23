@@ -31,6 +31,7 @@ class NetConnFlyweightFactory {
         return NetConnFlyweightImpl(data: stockData)
     }
     
+    // The default extrinsic data shared by the flyweight
     private class var stockData: [String: Int] {
         get {
             struct singletonWrapper {

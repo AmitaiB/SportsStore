@@ -90,6 +90,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         productLogger.log(item: product)
         displayTotalStock()
         
+        StockServerFactory.getStockServer()
+            .setStockLevel(for: product.name, stockLevel: product.stockLevel)
     }
   
     /// Climb the view heirarchy to grab a reference to the ProductTableCell

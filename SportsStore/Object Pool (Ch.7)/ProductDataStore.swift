@@ -29,17 +29,14 @@ final class ProductDataStore {
             }
             
             networkQ.async {
-                let stockConn = NetworkPool.getConnection()
-                let level = stockConn.getStockLevel(name: product.name)
-                if let level = level {
-                    product.stockLevel = level
+                StockServerFactory.getStockServer().getStockLevel(for: p.name, callback: { (name, stockLevel) in
+                    p.stockLevel = stockLevel
                     self.uiQ.async {
                         if let callback = self.callback {
-                            callback(product)
+                            callback(p)
                         }
                     }
-                }
-                NetworkPool.returnA(connection: stockConn)
+                })
             }
             products.append(p)
         }
